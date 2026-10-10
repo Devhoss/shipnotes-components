@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Your AI gets a face</title>
+<style>
+@font-face{font-family:Shoulders;src:url('assets/big-shoulders.woff2');font-weight:700;font-display:block}
+@font-face{font-family:Onest;src:url('assets/onest.woff2');font-display:block}
+*{box-sizing:border-box}html,body{margin:0;background:#020405;color:#eff7fa;width:100%;height:100%;overflow:hidden;-webkit-font-smoothing:antialiased}
+#scene{position:absolute;inset:0;width:100%;height:100%;display:block}#titles{position:absolute;inset:0;pointer-events:none}h1{position:absolute;top:15.2%;left:7.4%;margin:0;font:700 min(10.7vw,6.02vh)/.96 Shoulders,sans-serif;letter-spacing:-.022em;text-shadow:0 2px 28px #020405,0 1px 6px #020405}h1 span{display:block;color:var(--accent,#89e2ee)}#caption{position:absolute;top:19%;left:7.4%;right:9%;text-align:center;font:400 min(5.8vw,3.3vh)/1.15 Onest,sans-serif;text-wrap:balance}#credit{position:absolute;bottom:13.6%;left:7.4%;font:400 min(2.9vw,1.65vh) Onest,sans-serif;color:#71838a}
+#controls{position:absolute;bottom:16px;left:16px;right:16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font:13px Onest,sans-serif;background:#10171beb;padding:10px;border-radius:12px}button{min-height:40px;padding:0 15px;border:0;border-radius:6px;background:#263a42;color:white;font:inherit;cursor:pointer}button:active{scale:.96}button:focus-visible,input:focus-visible{outline:2px solid #a7f2ff;outline-offset:3px}input{min-width:90px;flex:1;accent-color:#89e2ee}#error{position:absolute;left:8%;right:8%;top:45%;font:20px Onest;display:none}body.capture #controls{display:none}
+@media(min-aspect-ratio:3/4){h1{top:9%;font-size:8.7vw}#caption{top:12%}#credit{bottom:7%}}
+
+#dialogue-controls{display:none;position:absolute;left:24px;right:24px;bottom:24px;max-width:560px;margin:auto;font:13px Onest,sans-serif}
+body.dialogue #controls,body.dialogue #titles{display:none}body.dialogue #dialogue-controls{display:block}
+.dialogue-heading{display:flex;align-items:center;gap:12px;margin-bottom:14px}#dialogue-status{flex:1;color:#b2c8ce}#level{width:65px;height:4px;accent-color:#89e2ee}
+.dialogue-actions{display:flex;gap:8px;flex-wrap:wrap}#reply{background:#b1eaf1;color:#09181d}.dialogue-actions button:disabled{opacity:.4;cursor:default}
+#dialogue-controls p{color:#71838a;font-size:12px;line-height:1.5;margin:12px 0 0}#dialogue-controls a{color:#a1c1ca}#dialogue-error{color:#ffc1ad!important}
+body.capture #dialogue-controls{display:none!important}
+@media(max-width:480px){#dialogue-controls{left:16px;right:16px;bottom:max(16px,env(safe-area-inset-bottom))}.dialogue-actions button{padding:0 12px;min-height:44px}}
+</style></head><body><canvas id="scene" aria-label="A flowing particle field assembling into a human face"></canvas><div id="titles"><h1>your AI is<br><span>about to get a face.</span></h1><div id="caption"></div><div id="credit">@shipnotesai</div></div><div id="error" role="alert"></div><audio id="voice" src="audio/voice-timeline.wav" preload="auto"></audio><div id="controls"><button id="play" aria-label="Play animation">Play</button><input id="time" type="range" min="0" max="11.99" value="0" step=".01" aria-label="Animation time"><button id="sound" aria-pressed="false">Voice off</button><button id="palette">Ice / amber</button><a href="index.html?mode=dialogue" style="color:white">Dialogue</a></div>
+<section id="dialogue-controls" aria-label="Dialogue demo">
+<div class="dialogue-heading"><span id="dialogue-status" role="status">Loading the face</span><meter id="level" min="0" max="1" value="0" aria-label="Voice level"></meter></div>
+<div class="dialogue-actions"><button id="reply" disabled>Play a reply</button><button id="pause-reply" disabled>Pause voice</button><button id="finish-reply" disabled>Finish reply</button><button id="cancel-reply" disabled>Interrupt</button></div>
+<p>Pause the voice. The face stays until the reply is finished.<br><a href="index.html">Watch the 12-second film</a> · <a href="API.md">Integration guide</a></p><p id="dialogue-error" role="alert"></p>
+</section>
+<script src="dialogue-controller.js"></script><script src="dialogue-demo.js"></script>
+<script src="vendor/three-r180.js"></script><script src="vendor/motion.js"></script><script src="scene.js"></script></body></html>
