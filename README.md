@@ -4,6 +4,14 @@ Small interfaces with moving parts, built for [Ship Notes](https://x.com/shipnot
 
 Want one built for your product? [DM me on X](https://x.com/shipnotesai).
 
+## Glyph Void
+
+A word left empty inside a field of tiny moving marks. Drag through them and they bend away from your cursor, then settle back. Type your own word to change the opening.
+
+<a href="components/glyph-void"><img src="previews/glyph-void.jpg" width="480" alt="Glyph Void: pale typographic marks flowing around an empty YOU on a black field"></a>
+
+**[Try it live](https://aqualang89.github.io/shipnotes-components/components/glyph-void/demo.html)**. Canvas 2D, no runtime dependencies. Copy the source and font files together; usage is in the [Glyph Void notes](components/glyph-void/README.md).
+
 ## AI Face Flow
 
 A face for your voice assistant. While your AI is quiet it's a stream of 180,000 particles. When it starts a reply, the stream flows into a face that talks, turns and looks at you, then dissolves when the reply ends. Hook it to your own TTS: `beginResponse()`, `setLevel()`, `endResponse()`.
