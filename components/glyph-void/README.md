@@ -1,6 +1,6 @@
 # Glyph Void
 
-An empty word inside a field of moving type. Drag across the marks and they bend around your cursor, then settle back. Type a new word and the opening changes shape.
+An empty word inside a field of moving type. Drag across the marks and they bend around your cursor, leave a short wake, then settle back. Type a new word and the opening changes shape.
 
 **[Try it live](https://aqualang89.github.io/shipnotes-components/components/glyph-void/demo.html)**. No build step or runtime dependencies.
 
@@ -19,10 +19,10 @@ Copy `glyph-void.js`, `glyph-void.css`, and `fonts/` together. Then add:
 <script src="glyph-void.js" defer></script>
 ```
 
-Set the `text` attribute or call `element.setText('404')` to change the word. `density` defaults to `1`; try `0.6` on a slower device. `color` and `accent` set the mark colors. The component also exposes `renderAt(seconds, pointer)` for frame capture, where `pointer` has `{x, y, at, power}` in component pixels.
+Set the `text` attribute or call `element.setText('404')` to change the word. `density` defaults to `1`; try `0.6` on a slower device. `color` and `accent` set the mark colors. The component also exposes `renderAt(seconds, pointer)` for full-quality frame capture. Pass `{x, y, at, power, vx, vy}` in component pixels for a repeatable frame; `vx` and `vy` are optional.
 
-The field adapts to its size and respects `prefers-reduced-motion`. It labels the word for assistive technology. It supports uppercase Latin letters and digits; two to six characters read best. Arbitrary shapes and multiline text are outside this version.
+The field adapts to its size and draw cost, pauses when off screen or when the tab is hidden, and responds to changes in `prefers-reduced-motion`. It labels the word for assistive technology. It supports uppercase Latin letters and digits; two to six characters read best. Arbitrary shapes and multiline text are outside this version.
 
-Canvas 2D draws the marks on the CPU. On local headless Chromium, `renderAt` took about 21.6 ms per frame with 6,400 marks at a 390 x 844 viewport. That is a local measurement, not a device frame-rate guarantee.
+Canvas 2D draws the marks on the CPU. In a local headless Edge check, v2 full-quality `renderAt` had a median cost of 11.6 ms with about 6,400 marks at 390 x 844. Live playback can reduce background density when drawing takes longer. This is a local measurement, not a device frame-rate guarantee.
 
 The code is covered by the repository's [MIT license](../../LICENSE). Bundled Onest, Big Shoulders Display, and IBM Plex Mono fonts keep their SIL OFL 1.1 notices in `fonts/`.
