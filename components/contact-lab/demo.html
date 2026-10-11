@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eae4da">
+  <title>CONTACT / Controls with weight</title>
+  <meta name="description" content="Four tactile controls, three motion profiles, one live instrument. Free code from Ship Notes.">
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="masthead">
+      <a class="masthead__brand" href="README.md" aria-label="CONTACT component guide">S<span class="brand-notch">/</span>N</a>
+      <span class="masthead__middle">SHIP NOTES <span aria-hidden="true">/</span> INTERACTION OBJECTS</span>
+      <span class="masthead__edition">FIELD KIT 001 <span class="masthead__asterisk">✳</span></span>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="title">
+        <div class="intro__heading">
+          <p class="eyebrow"><span class="eyebrow__dot"></span> AVAILABLE FOR YOUR SITE</p>
+          <h1 id="title">CON<span>TACT</span><i>.</i></h1>
+        </div>
+        <div class="intro__aside">
+          <p class="intro__lead">A switch should feel like<br>something moved.</p>
+          <p>Four familiar controls with a little weight under your finger. Press, hold, change your mind, let go.</p>
+          <a href="#bench" class="jump-link">TRY THE CONTROLS <span aria-hidden="true">↘</span></a>
+        </div>
+      </section>
+
+      <section class="bench" id="bench" aria-label="Interactive control lab" data-ct-profile="cushioned">
+        <div class="bench__toolbar">
+          <div class="bench__id"><span class="live-pip"></span> LIVE BENCH <span class="bench__slash">/</span> 04 PARTS</div>
+          <div class="bench__settings">
+            <div class="preset-picker" role="group" aria-label="Motion character">
+              <span class="setting-label">FEEL</span>
+              <button type="button" data-profile="precise" aria-pressed="false">PRECISE</button>
+              <button type="button" data-profile="cushioned" aria-pressed="true">SOFT</button>
+              <button type="button" data-profile="springy" aria-pressed="false">SPRINGY</button>
+            </div>
+            <div class="color-picker" role="group" aria-label="Accent color">
+              <span class="setting-label">INK</span>
+              <button type="button" data-accent="#ff6a3c" class="color-picker__orange" aria-label="Orange accent" aria-pressed="true"></button>
+              <button type="button" data-accent="#88b7d5" class="color-picker__blue" aria-label="Blue accent" aria-pressed="false"></button>
+              <button type="button" data-accent="#9ab870" class="color-picker__green" aria-label="Green accent" aria-pressed="false"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bench__feature" id="feature" data-power="on">
+          <div class="feature__copy">
+            <span class="feature__index">01 / PRESSURE TEST</span>
+            <h2>Hold it.<br><em>Feel it move.</em></h2>
+            <p>Press the switch and wait before you let go. The thumb leans into the change.</p>
+          </div>
+          <div class="feature__stage" id="feature-stage">
+            <span class="feature__axis feature__axis--left">A / POWER</span>
+            <span class="feature__axis feature__axis--right" id="feature-state">ON</span>
+            <span class="feature__ring feature__ring--one" aria-hidden="true"></span>
+            <span class="feature__ring feature__ring--two" aria-hidden="true"></span>
+            <label class="ct-switch" data-contact-switch>
+              <input id="power" type="checkbox" role="switch" aria-label="Power" checked>
+              <span class="ct-switch__track" aria-hidden="true"><span class="ct-switch__thumb"></span></span>
+            </label>
+            <span class="feature__instruction">PRESS / HOLD / RELEASE</span>
+          </div>
+        </div>
+
+        <div class="bench__body">
+          <div class="parts">
+            <div class="part-row">
+              <span class="part-row__number">02</span>
+              <div class="part-row__text"><h2>Trace</h2><p>One more layer of motion.</p></div>
+              <label class="ct-check" data-contact-check>
+                <input id="trace" type="checkbox" aria-label="Show motion trace" checked>
+                <span class="ct-check__box" aria-hidden="true">
+                  <svg class="ct-check__mark" viewBox="0 0 28 28"><path d="M5.5 14.5 11.6 20l11-12.2"/></svg>
+                </span>
+              </label>
+            </div>
+            <div class="part-row part-row--wide">
+              <span class="part-row__number">03</span>
+              <div class="part-row__text"><h2>Pattern</h2><p>One choice at a time.</p></div>
+              <fieldset class="ct-segment" data-contact-segment>
+                <legend class="visually-hidden">Pattern</legend>
+                <div class="ct-segment__track">
+                  <span class="ct-segment__plate" aria-hidden="true"></span>
+                  <label><input type="radio" name="pattern" value="orbit" checked><span>Orbit</span></label>
+                  <label><input type="radio" name="pattern" value="pulse"><span>Pulse</span></label>
+                  <label><input type="radio" name="pattern" value="sweep"><span>Sweep</span></label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="part-row part-row--wide part-row--last">
+              <span class="part-row__number">04</span>
+              <div class="part-row__text"><h2>Output</h2><p>Drag. The value follows.</p></div>
+              <div class="ct-range" data-contact-range>
+                <input id="output" type="range" min="0" max="100" value="68" aria-label="Output level">
+                <output for="output">68</output>
+              </div>
+            </div>
+          </div>
+
+          <aside class="instrument" id="instrument" data-mode="orbit" data-power="on" data-trace="on" aria-label="Live output monitor">
+            <div class="instrument__top"><span>OUTPUT MONITOR <span class="muted">/ LIVE</span></span><span class="instrument__led" aria-hidden="true"></span></div>
+            <div class="instrument__viewport" aria-hidden="true">
+              <div class="instrument__crosshair instrument__crosshair--h"></div>
+              <div class="instrument__crosshair instrument__crosshair--v"></div>
+              <div class="instrument__echo instrument__echo--one"></div>
+              <div class="instrument__echo instrument__echo--two"></div>
+              <div class="instrument__housing">
+                <div class="instrument__ticks"></div>
+                <div class="instrument__orbit"><i></i><i></i></div>
+                <div class="instrument__pulse instrument__pulse--a"></div>
+                <div class="instrument__pulse instrument__pulse--b"></div>
+                <div class="instrument__sweep"></div>
+                <div class="instrument__core"><span class="instrument__core-line"></span><span class="instrument__core-pin"></span></div>
+              </div>
+              <span class="instrument__axis instrument__axis--x">X / 0.68</span>
+              <span class="instrument__axis instrument__axis--y">Y / 0.32</span>
+            </div>
+            <div class="instrument__readouts">
+              <div><span>MODE</span><strong id="readout-mode">ORBIT</strong></div>
+              <div><span>TRACE</span><strong id="readout-trace">ON</strong></div>
+              <div><span>OUTPUT</span><strong id="readout-output">68%</strong></div>
+            </div>
+          </aside>
+        </div>
+        <div class="bench__footer"><span>PRESS &amp; HOLD A CONTROL BEFORE LETTING GO</span><span>POINTER / TOUCH / KEYBOARD</span></div>
+      </section>
+
+      <section class="understory" aria-labelledby="understory-title">
+        <div class="understory__heading"><span class="section-index">WHAT YOU GET / 01</span><h2 id="understory-title">Small parts.<br><em>Proper behavior.</em></h2></div>
+        <div class="understory__list">
+          <div><span>01 / RESPONSE</span><p>The surface gives under your finger before the state changes.</p></div>
+          <div><span>02 / CONTINUITY</span><p>Reverse direction halfway through. The control moves from where it is.</p></div>
+          <div><span>03 / READY TO USE</span><p>Native form inputs underneath. Copy the files, choose a color, wire up your values.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer"><span>CONTACT / SHIP NOTES</span><span>HTML + CSS + JAVASCRIPT <span aria-hidden="true">✳</span> NO RUNTIME DEPENDENCIES</span></footer>
+  </div>
+  <script src="contact.js"></script>
+  <script src="demo.js"></script>
+</body>
+</html>

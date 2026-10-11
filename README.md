@@ -4,6 +4,14 @@ Small interfaces with moving parts, built for [Ship Notes](https://x.com/shipnot
 
 Want one built for your product? [DM me on X](https://x.com/shipnotesai).
 
+## CONTACT
+
+Four controls with a little weight: a switch that starts moving under your finger, a checkbox that gives before the mark appears, a travelling segmented choice, and a range slider that follows your hand. Try three spring profiles and change the accent color in the live bench.
+
+<a href="components/contact-lab"><img src="previews/contact-lab.jpg" width="480" alt="CONTACT: four warm orange controls beside a dark live output monitor"></a>
+
+**[Try it live](https://aqualang89.github.io/shipnotes-components/components/contact-lab/demo.html)**. HTML, CSS, and JavaScript with no runtime dependencies. Copy the control files; the demo and usage notes are in the [CONTACT folder](components/contact-lab/README.md).
+
 ## Glyph Void
 
 A word left empty inside a field of tiny moving marks. Drag through them and they bend away from your cursor, then settle back. Type your own word to change the opening.
