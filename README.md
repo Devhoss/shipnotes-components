@@ -1,8 +1,8 @@
 # Ship Notes components
 
-Small interfaces with moving parts, built for [Ship Notes](https://x.com/shipnotesai). New components are added as their videos come out.
+Small interfaces with moving parts, built for [Ship Notes](https://www.instagram.com/shipnotesai/). New components are added as their videos come out.
 
-Want one built for your product? [DM me on X](https://x.com/shipnotesai).
+Want one built for your product? [DM me on Instagram](https://www.instagram.com/shipnotesai/).
 
 ## Graph View
 
@@ -124,7 +124,7 @@ Mouse, touch, keyboard and reduced motion are supported. Tested in Chromium on d
 
 ## Follow the builds
 
-[Ship Notes on X](https://x.com/shipnotesai). Follow along for the next component and its source. Need a custom one for your product? DM me there.
+[Ship Notes on Instagram](https://www.instagram.com/shipnotesai/). Follow along for the next component and its source. Need a custom one for your product? DM me there.
 
 ## License
 

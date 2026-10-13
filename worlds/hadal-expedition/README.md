@@ -1,6 +1,6 @@
 # Hadal: the expedition
 
-A made-up expedition to the bottom of the Mariana Trench, 10,935 m down. Astra drew the first version (the jellyfish and the hydrophone), Claude Code took it the rest of the way for [Ship Notes](https://x.com/shipnotesai).
+A made-up expedition to the bottom of the Mariana Trench, 10,935 m down. Astra drew the first version (the jellyfish and the hydrophone), Claude Code took it the rest of the way for [Ship Notes](https://www.instagram.com/shipnotesai/).
 
 **[Dive in live](https://aqualang89.github.io/shipnotes-components/worlds/hadal-expedition/)**, sound on. The first Hadal, the one with the red can, is still in [worlds/hadal](../hadal).
 

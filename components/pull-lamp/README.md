@@ -1,6 +1,6 @@
 # Pull Lamp
 
-A small desk lamp that works as a theme switch. Pull the brass cord, tap it, or focus it and press Enter or Space. Built with Codex for [Ship Notes](https://x.com/shipnotesai).
+A small desk lamp that works as a theme switch. Pull the brass cord, tap it, or focus it and press Enter or Space. Built with Codex for [Ship Notes](https://www.instagram.com/shipnotesai/).
 
 ## Try it
 

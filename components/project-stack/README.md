@@ -1,6 +1,6 @@
 # Project Stack
 
-Three portfolio cards in a stack. Pick a tab or use the arrow keys and the next card comes forward. Built with Codex for [Ship Notes](https://x.com/shipnotesai).
+Three portfolio cards in a stack. Pick a tab or use the arrow keys and the next card comes forward. Built with Codex for [Ship Notes](https://www.instagram.com/shipnotesai/).
 
 **[Open the live demo](https://aqualang89.github.io/shipnotes-components/components/project-stack/demo.html)**. It runs in the browser, phones included.
 

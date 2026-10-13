@@ -1,6 +1,6 @@
 # Hadal
 
-Scroll to the bottom of the ocean, 10,935 m down. Built with Claude Code for [Ship Notes](https://x.com/shipnotesai).
+Scroll to the bottom of the ocean, 10,935 m down. Built with Claude Code for [Ship Notes](https://www.instagram.com/shipnotesai/).
 
 **[Dive in live](https://aqualang89.github.io/shipnotes-components/worlds/hadal/)**, sound on.
 
