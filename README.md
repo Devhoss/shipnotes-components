@@ -4,6 +4,14 @@ Small interfaces with moving parts, built for [Ship Notes](https://x.com/shipnot
 
 Want one built for your product? [DM me on X](https://x.com/shipnotesai).
 
+## Graph View
+
+An Obsidian-style graph of linked notes for your own site. Notes bloom out of one point and settle into colored clusters; drag any note and the whole web follows. Same forces as Obsidian's graph engine, physics in a Web Worker, code written from scratch.
+
+<a href="components/graph-view"><img src="previews/graph-view.jpg" width="480" alt="Graph View: colored clusters of glowing notes connected by thin lines on black"></a>
+
+**[Try it live](https://aqualang89.github.io/shipnotes-components/components/graph-view/demo.html)**, works on a phone too. One JavaScript file, no libraries. Feed it your own notes as JSON; details in the [Graph View notes](components/graph-view/README.md).
+
 ## CONTACT
 
 Four controls with a little weight: a switch that starts moving under your finger, a checkbox that gives before the mark appears, a travelling segmented choice, and a range slider that follows your hand. Try three spring profiles and change the accent color in the live bench.
