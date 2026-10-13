@@ -35,10 +35,10 @@ a { color: inherit; }
 .jump-link:hover span { transform: translate(3px, 3px); }
 .jump-link:focus-visible { outline: 2px solid #26231f; outline-offset: 4px; }
 
-.bench { --ct-accent: #ff6a3c; border: 1px solid #2b2825; border-radius: 7px; overflow: hidden; background: #f4efe7; box-shadow: 0 10px 30px #38312612, 0 35px 80px #38312613; }
+.bench { border: 1px solid #2b2825; border-radius: 7px; overflow: hidden; background: #f4efe7; box-shadow: 0 10px 30px #38312612, 0 35px 80px #38312613; }
 .bench__toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 74px; padding: 13px 25px; border-bottom: 1px solid #2b2825; background: #dfd8cc; }
 .bench__id { display: flex; align-items: center; gap: 10px; white-space: nowrap; font-size: 11px; letter-spacing: .055em; }
-.live-pip { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #f36b40; box-shadow: 0 0 0 4px #f36b4026; }
+.live-pip { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--ct-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ct-accent) 15%, transparent); }
 .bench__slash { color: #989084; }
 .bench__settings { display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; gap: 25px; }
 .preset-picker, .color-picker { display: flex; align-items: center; gap: 4px; }
@@ -54,8 +54,9 @@ a { color: inherit; }
 .color-picker button[aria-pressed="true"]::after { content: ''; position: absolute; inset: 4px; border: 1px solid #292622; border-radius: 50%; }
 .color-picker button:hover { transform: translateY(-2px); }
 .color-picker__orange { --swatch: #ff6a3c; }
-.color-picker__blue { --swatch: #88b7d5; }
-.color-picker__green { --swatch: #9ab870; }
+.color-picker__ice { --swatch: #8fd0ff; }
+.color-picker__lime { --swatch: #c4ff3d; }
+.color-picker__violet { --swatch: #8b6cff; }
 
 .bench__feature { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 42%); min-height: 300px; overflow: hidden; border-bottom: 1px solid #2b2825; background: #292725; color: #f4efe7; }
 .bench__feature::before { content: ''; position: absolute; inset: 0 42% 0 0; pointer-events: none; background: radial-gradient(circle at 77% 55%, var(--ct-accent), transparent 57%); opacity: .08; transition: opacity 280ms ease; }

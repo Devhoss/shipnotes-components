@@ -37,6 +37,23 @@ Load the CSS, add the markup, then mount the script on a parent element:
 
 The inputs keep their normal `input` and `change` events. If you change a value in code without dispatching an event, call `controls.refresh()` to update the visuals. Calling `ContactControls.mount(root)` again returns the same controller until you call `destroy()`.
 
+## Themes
+
+Four color themes are built in: orange (the default), `ice`, `lime` and `violet`. Each one sets the fill, the thumb, the check mark and the selected label together. Put the attribute on the same element as `data-ct-profile`:
+
+```html
+<div id="my-controls" data-ct-profile="cushioned" data-ct-theme="lime">
+```
+
+Or switch it live:
+
+```js
+controls.setTheme('violet')   // 'ice', 'lime', 'violet', or null for orange
+controls.getTheme()           // 'violet'
+```
+
+Want your own color? Set `--ct-accent` and, if the thumb needs it, `--ct-thumb-bg`, `--ct-thumb-dot`, `--ct-mark` and `--ct-on-text`.
+
 ## The other three
 
 Put any of these inside the same mounted parent. Give each radio group its own `name`.

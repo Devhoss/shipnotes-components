@@ -2,6 +2,7 @@
 (() => {
   'use strict';
 
+  const THEMES = ['orange', 'ice', 'lime', 'violet'];
   const PROFILES = Object.freeze({
     precise: { stiffness: 980, damping: 64, press: 0.065 },
     cushioned: { stiffness: 390, damping: 38, press: 0.11 },
@@ -179,9 +180,16 @@
     function refresh() { refreshers.forEach(sync => sync()); }
     const forms = new Set(Array.from(root.querySelectorAll('input'), input => input.form).filter(Boolean));
     forms.forEach(form => on(form, 'reset', () => requestAnimationFrame(() => { if (!destroyed) refresh(); })));
+    function setTheme(name) {
+      if (name && !THEMES.includes(name)) return false;
+      if (name) profileRoot.setAttribute('data-ct-theme', name); else profileRoot.removeAttribute('data-ct-theme');
+      return true;
+    }
     setProfile(profileName);
     const api = {
       setProfile,
+      setTheme,
+      getTheme: () => profileRoot.getAttribute('data-ct-theme') || 'orange',
       getProfile: () => profileName,
       refresh,
       destroy() {

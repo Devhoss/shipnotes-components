@@ -64,8 +64,8 @@
     controls.setProfile(button.dataset.profile);
     bench.querySelectorAll('[data-profile]').forEach(choice => choice.setAttribute('aria-pressed', String(choice === button)));
   }));
-  bench.querySelectorAll('[data-accent]').forEach(button => button.addEventListener('click', () => {
-    bench.style.setProperty('--ct-accent', button.dataset.accent);
-    bench.querySelectorAll('[data-accent]').forEach(choice => choice.setAttribute('aria-pressed', String(choice === button)));
+  bench.querySelectorAll('[data-theme]').forEach(button => button.addEventListener('click', () => {
+    controls.setTheme(button.dataset.theme === 'orange' ? null : button.dataset.theme);
+    bench.querySelectorAll('[data-theme]').forEach(choice => choice.setAttribute('aria-pressed', String(choice === button)));
   }));
 })();

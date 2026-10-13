@@ -5,6 +5,33 @@
   --ct-paper: #f3eee6;
   --ct-ease: cubic-bezier(.2, 0, 0, 1);
   --ct-time: 240ms;
+  --ct-thumb-bg: linear-gradient(155deg, #fffefa 0%, #eee6db 72%, #d5c8b6 100%);
+  --ct-thumb-dot: #ed754c;
+  --ct-mark: #fff9ee;
+  --ct-on-text: #2b211b;
+}
+
+/* themes: put data-ct-theme on the same element as data-ct-profile */
+:where([data-ct-theme="ice"]) {
+  --ct-accent: #8fd0ff;
+  --ct-thumb-bg: linear-gradient(155deg, #ffffff 0%, #eef4fb 72%, #c9d6e6 100%);
+  --ct-thumb-dot: #4f9fe6;
+  --ct-mark: #0e2236;
+  --ct-on-text: #0e2236;
+}
+:where([data-ct-theme="lime"]) {
+  --ct-accent: #c4ff3d;
+  --ct-thumb-bg: linear-gradient(155deg, #5c5e64 0%, #1d1d21 58%, #09090b 100%);
+  --ct-thumb-dot: #c4ff3d;
+  --ct-mark: #152006;
+  --ct-on-text: #152006;
+}
+:where([data-ct-theme="violet"]) {
+  --ct-accent: #8b6cff;
+  --ct-thumb-bg: linear-gradient(155deg, #ffffff 0%, #f0edff 72%, #cfc8f0 100%);
+  --ct-thumb-dot: #7a5cff;
+  --ct-mark: #ffffff;
+  --ct-on-text: #ffffff;
 }
 
 :where([data-ct-profile="precise"]) { --ct-time: 150ms; --ct-ease: cubic-bezier(.18, .82, .25, 1); }
@@ -46,7 +73,7 @@
 }
 .ct-switch input:checked + .ct-switch__track {
   background: var(--ct-accent);
-  box-shadow: inset 0 2px 5px #57220c75, inset 0 0 0 1px #8c2e1166, 0 2px 0 #fff9;
+  box-shadow: inset 0 2px 5px #0000004d, inset 0 0 0 1px #00000026, 0 2px 0 #fff9;
 }
 .ct-switch__track::before {
   content: '';
@@ -66,7 +93,7 @@
   height: 32px;
   border-radius: 18px;
   transform: translateX(var(--ct-x)) scale(var(--ct-thumb-scale, 1));
-  background: linear-gradient(155deg, #fffefa 0%, #eee6db 72%, #d5c8b6 100%);
+  background: var(--ct-thumb-bg);
   box-shadow: 0 1px 1px #fff8 inset, 0 1px 2px #2a1b1466, 0 3px 7px #2a1b144d;
 }
 .ct-switch__thumb::after {
@@ -79,7 +106,7 @@
   opacity: .72;
   transition: opacity var(--ct-time) var(--ct-ease), background var(--ct-time) var(--ct-ease);
 }
-.ct-switch input:checked + .ct-switch__track .ct-switch__thumb::after { background: #ed754c; opacity: 1; }
+.ct-switch input:checked + .ct-switch__track .ct-switch__thumb::after { background: var(--ct-thumb-dot); opacity: 1; }
 .ct-switch.is-pressed { --ct-thumb-scale: .96; }
 .ct-switch input:focus-visible + .ct-switch__track,
 .ct-check input:focus-visible + .ct-check__box { outline: 3px solid var(--ct-ink); outline-offset: 4px; }
@@ -106,7 +133,7 @@
 }
 .ct-check input:checked + .ct-check__box {
   background: var(--ct-accent);
-  box-shadow: inset 0 2px 5px #4b1b105d, inset 0 0 0 1px #963c2766, 0 2px 0 #fff9;
+  box-shadow: inset 0 2px 5px #0000004d, inset 0 0 0 1px #00000026, 0 2px 0 #fff9;
 }
 .ct-check.is-pressed { --ct-check-scale: .91; }
 .ct-check__mark {
@@ -114,7 +141,7 @@
   width: 27px;
   height: 27px;
   fill: none;
-  stroke: #fff9ee;
+  stroke: var(--ct-mark);
   stroke-width: 3.8;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -177,7 +204,7 @@
   text-transform: uppercase;
   transition: color var(--ct-time) var(--ct-ease), transform var(--ct-time) var(--ct-ease);
 }
-.ct-segment input:checked + span { color: #2b211b; }
+.ct-segment input:checked + span { color: var(--ct-on-text); }
 .ct-segment label:active span { transform: scale(.96); }
 .ct-segment input:focus-visible + span { outline: 2px solid #fff; outline-offset: 6px; border-radius: 2px; }
 
