@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080813"><title>Secret Garden</title><link rel="icon" href="data:,">
+<link rel="stylesheet" href="type-frost.css"><link rel="stylesheet" href="demo.css"></head>
+<body><div class="app" id="app">
+  <header class="toolbar"><a class="wordmark" href="index.html" aria-label="Secret Garden, start again">Secret Garden<span>by Ship Notes</span></a>
+    <div class="tools">
+    <button class="settings-button" id="settings-toggle" aria-controls="settings" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="2.5"/><circle cx="15" cy="17" r="2.5"/></svg><span>Settings</span></button></div>
+  </header>
+  <main id="field" aria-label="Interactive frost lettering"></main>
+  <footer class="hint"><div class="word-editor"><label for="words">Your words</label><input id="words" type="text" placeholder="Type something…" autocomplete="off" spellcheck="false" aria-describedby="typing-help" disabled></div><p id="typing-help"><span>Space cracks</span><span>Backspace melts</span><span>Enter clears</span></p><span class="film-note">Alt + H hides controls</span></footer>
+  <aside class="panel" id="settings" aria-labelledby="panel-title" inert>
+    <div class="panel-heading"><h1 id="panel-title">Your frost</h1><button id="settings-close" class="icon-button" aria-label="Close settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+    <div class="panel-body">
+      <fieldset><legend>Ice colour</legend><div class="themes" role="group" aria-label="Ice colour presets">
+        <button class="theme active" data-theme="Frozen" aria-pressed="true"><i style="--swatch:#a0bddb"></i>Frozen</button>
+        <button class="theme" data-theme="Aurora" aria-pressed="false"><i style="--swatch:#45dbb4"></i>Aurora</button>
+        <button class="theme" data-theme="Rose quartz" aria-pressed="false"><i style="--swatch:#dd72b4"></i>Rose quartz</button>
+        <button class="theme" data-theme="Ember ice" aria-pressed="false"><i style="--swatch:#f4a65d"></i>Ember ice</button>
+      </div><label class="custom-colour">Custom colour<input type="color" id="custom-colour" value="#a0bddb" aria-label="Custom ice colour"></label></fieldset>
+      <label class="font-label" for="font">Lettering<select id="font"><option value="playfair">Playfair Display</option><option value="cormorant">Cormorant</option><option value="unbounded">Unbounded</option><option value="shoulders">Big Shoulders Display</option></select></label>
+      <div class="sliders">
+        <label for="growth">Growth speed <output id="growth-value">1.0×</output><input id="growth" type="range" min="0.5" max="1.6" step="0.1" value="1"></label>
+        <label for="density">Density <output id="density-value">1.0×</output><input id="density" type="range" min="0.6" max="1.4" step="0.1" value="1"></label>
+        <label for="length">Plant reach <output id="length-value">1.0×</output><input id="length" type="range" min="0.5" max="1.5" step="0.1" value="1"></label>
+        <label for="glow">Glow <output id="glow-value">0.8×</output><input id="glow" type="range" min="0" max="1.5" step="0.1" value="0.8"></label>
+      </div>
+      <div class="panel-actions"><button id="copy">Copy embed code</button><button id="clear">Shatter</button></div>
+      <p id="status" role="status" aria-live="polite">Move across the glass to melt the ice.</p>
+      <textarea id="copy-fallback" aria-label="Embed code to copy" readonly hidden></textarea>
+    </div>
+  </aside>
+  <p class="load-error" id="error" role="alert" hidden></p>
+</div><script src="type-frost.js"></script><script src="demo.js"></script></body></html>

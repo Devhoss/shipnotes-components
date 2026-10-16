@@ -4,6 +4,14 @@ Small interfaces with moving parts, built for [Ship Notes](https://www.instagram
 
 Want one built for your product? [DM me on Instagram](https://www.instagram.com/shipnotesai/).
 
+## Secret Garden
+
+Type on dark glass and a winter garden grows around your words: frozen leaves, rowan berries, snow settling on the letters. Space cracks the ice, Backspace melts a letter, Enter shatters it. Four ice colours, four fonts, and your own sounds through events.
+
+<a href="components/secret-garden"><img src="previews/secret-garden.jpg" width="480" alt="Secret Garden: the words SHIP NOTES in frosted serif letters with icy leaves, red rowan berries and a white winter flower on a dark night background"></a>
+
+**[Try it live](https://aqualang89.github.io/shipnotes-components/components/secret-garden/demo.html)**, works on a phone too. Canvas 2D, no libraries. Copy three files and the fonts folder; options and API in the [Secret Garden notes](components/secret-garden/README.md).
+
 ## Graph View
 
 An Obsidian-style graph of linked notes for your own site. Notes bloom out of one point and settle into colored clusters; drag any note and the whole web follows. Same forces as Obsidian's graph engine, physics in a Web Worker, code written from scratch.
