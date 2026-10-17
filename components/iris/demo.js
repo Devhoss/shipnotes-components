@@ -1,0 +1,21 @@
+(()=>{'use strict';const $=s=>document.querySelector(s),labels={idle:['A quiet presence.','Move closer. Take your time.'],listening:['I’m listening.','A little space for your voice.'],thinking:['Following a thought.','Light finds its way.'],speaking:['Something to say.','A preview of the voice response.']};
+try{
+ const orb=new IrisOrb($('#stage')),sound=new IrisSound(orb);window.iris=orb;window.irisSound=sound;window.renderAt=(t,s)=>orb.renderAt(t,s);window.ready=Promise.resolve(true);
+ function showState(state){document.querySelectorAll('[data-state]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.state===state)));$('#state-label').textContent=labels[state][0];$('#state-description').textContent=labels[state][1];}
+ function select(state){orb.setState(state);showState(state)}
+ orb.host.addEventListener('iris:statechange',e=>showState(e.detail.state));
+ orb.host.addEventListener('iris:microphonechange',e=>{const b=$('#mic');b.setAttribute('aria-pressed',String(e.detail.active));b.textContent=e.detail.active?'Stop microphone':'Use microphone'});
+ document.querySelectorAll('[data-state]').forEach(b=>b.addEventListener('click',()=>{if(sound.mic){sound.stopMic();$('#mic').setAttribute('aria-pressed','false');$('#mic').textContent='Use microphone'}select(b.dataset.state)}));
+ $('#sound').addEventListener('click',async()=>{const b=$('#sound');b.disabled=true;try{const on=await sound.toggle();b.setAttribute('aria-pressed',String(on));b.querySelector('span').textContent=on?'Sound on':'Sound off';$('#notice').textContent=on?'Air + glass · try Listen, Think and Speak':'Headphones on. Let it breathe.'}catch(e){$('#notice').textContent='Audio could not start. Try again.';console.error(e)}finally{b.disabled=false}});
+ function closeMix(){$('#sound-mix').hidden=true;$('#mix-toggle').setAttribute('aria-expanded','false')}
+ $('#mix-toggle').addEventListener('click',()=>{const open=$('#sound-mix').hidden;$('#sound-mix').hidden=!open;$('#mix-toggle').setAttribute('aria-expanded',String(open))});
+ $('#ambience').addEventListener('input',e=>sound.setAmbience(e.target.value));$('#responses').addEventListener('input',e=>sound.setResponses(e.target.value));
+ document.addEventListener('pointerdown',e=>{if(!e.target.closest('#sound-mix,#mix-toggle'))closeMix()});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'){const open=!$('#sound-mix').hidden;closeMix();if(open)$('#mix-toggle').focus()}});
+ $('#mic').addEventListener('click',async()=>{const b=$('#mic');if(sound.mic){sound.stopMic();b.setAttribute('aria-pressed','false');b.textContent='Use microphone';select('idle');$('#notice').textContent='Microphone off.';return;}b.disabled=true;try{if(await sound.startMic()){b.setAttribute('aria-pressed','true');b.textContent='Stop microphone';select('listening');$('#notice').textContent='Your audio stays on this device.';}}catch(e){$('#notice').textContent=e.name==='NotAllowedError'?'Microphone permission was declined. You can use the state buttons.':e.message;}finally{b.disabled=false}});
+ let warm=false;$('#palette').addEventListener('click',()=>{warm=!warm;orb.setPalette(warm);$('#palette').innerHTML=(warm?'Afterglow':'Blue hour')+' <span class="color-dot"></span>'});
+ function film(){closeMix();document.body.classList.toggle('film')}$('#film').addEventListener('click',film);$('#restore').addEventListener('click',film);addEventListener('keydown',e=>{if(e.key.toLowerCase()==='h'&&!e.ctrlKey&&!e.metaKey&&!e.altKey)film();if(e.key==='Escape')document.body.classList.remove('film')});
+ const params=new URLSearchParams(location.search);if(params.has('film'))document.body.classList.add('film');if(params.has('state'))select(params.get('state'));if(params.has('still'))orb.renderAt(Number(params.get('still'))||0);
+ let wasPaused=false;window.addEventListener('pagehide',e=>{if(e.persisted){sound.suspend();wasPaused=orb.paused;orb.paused=true}else{sound.dispose();orb.dispose()}});window.addEventListener('pageshow',e=>{if(e.persisted){if(!wasPaused)orb.resume();sound.resume()}});
+}catch(e){$('#error').hidden=false;$('#error').textContent='Iris needs WebGL 2. Try a recent Chrome, Edge or Safari with hardware acceleration enabled.';console.error(e)}
+})();

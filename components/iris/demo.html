@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#030508"><title>Iris · Ship Notes</title><link rel="icon" href="data:,"><link rel="stylesheet" href="style.css"></head>
+<body>
+<main id="app">
+ <div id="stage" role="img" aria-label="Iris, a living light sculpture that responds to sound"></div>
+ <header><a class="brand" href="demo.html">iris<span>by Ship Notes</span></a><div class="sound-tools"><button id="sound" aria-pressed="false" title="Air + glass sound"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path class="waves" d="M16 8a6 6 0 0 1 0 8M19 5a10 10 0 0 1 0 14"/></svg><span>Sound off</span></button><button id="mix-toggle" aria-label="Sound settings" aria-expanded="false" aria-controls="sound-mix"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h5m4 0h7M4 17h10m4 0h2"/><circle cx="11" cy="7" r="2"/><circle cx="16" cy="17" r="2"/></svg></button></div><section id="sound-mix" aria-label="Sound settings" hidden><p>Air + glass</p><label for="ambience">Ambience<input id="ambience" type="range" min="0" max="100" value="80"></label><label for="responses">Responses<input id="responses" type="range" min="0" max="100" value="100"></label></section></header>
+ <div class="caption"><span id="state-label">A quiet presence.</span><p id="state-description">Move closer. Take your time.</p></div>
+ <footer>
+  <nav aria-label="Iris state"><button data-state="idle" aria-pressed="true">Rest</button><button data-state="listening" aria-pressed="false">Listen</button><button data-state="thinking" aria-pressed="false">Think</button><button data-state="speaking" aria-pressed="false">Speak</button></nav>
+  <div class="tools"><button id="mic" aria-pressed="false">Use microphone</button><span class="divider"></span><button id="palette" aria-label="Change light palette">Blue hour <span class="color-dot"></span></button><button id="film" title="Hide controls · H" aria-label="Hide controls">↗</button></div>
+  <div id="notice" role="status">Headphones on. Let it breathe.</div>
+ </footer>
+ <button id="restore" aria-label="Show controls">Show controls</button>
+ <div id="error" role="alert" hidden></div>
+</main>
+<script src="vendor/three-r180.js"></script><script src="vendor/motion.js"></script><script src="assets/air-glass-data.js"></script><script src="iris.js"></script><script src="sound.js"></script><script src="demo.js"></script>
+</body></html>

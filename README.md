@@ -4,6 +4,14 @@ Small interfaces with moving parts, built for [Ship Notes](https://www.instagram
 
 Want one built for your product? [DM me on Instagram](https://www.instagram.com/shipnotesai/).
 
+## Iris
+
+A living light orb for a voice assistant: thin membranes and 960 light fibres around a dark pupil. It rests, turns toward you when it listens, sends light through its fibres when it thinks, and pulses with the real loudness of the voice when it speaks. Two palettes, its own air-and-glass sound, microphone input that never leaves the browser.
+
+<a href="components/iris"><img src="previews/iris.jpg" width="480" alt="Iris: a glowing blue and pink orb of light fibres around a dark centre, with Rest, Listen, Think and Speak buttons below"></a>
+
+**[Try it live](https://aqualang89.github.io/shipnotes-components/components/iris/demo.html)**, works on a phone too. Three.js and WebGL 2, own shaders. Five calls drive it from your app; details in the [Iris notes](components/iris/README.md).
+
 ## Secret Garden
 
 Type on dark glass and a winter garden grows around your words: frozen leaves, rowan berries, snow settling on the letters. Space cracks the ice, Backspace melts a letter, Enter shatters it. Four ice colours, four fonts, and your own sounds through events.
