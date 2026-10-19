@@ -4,6 +4,14 @@ Small interfaces with moving parts, built for [Ship Notes](https://www.instagram
 
 Want one built for your product? [DM me on Instagram](https://www.instagram.com/shipnotesai/).
 
+## Dust Orb
+
+A cloud of moving dust with light inside. Drag to turn it, tap for a pulse, or connect its five states to your assistant. The original Dust Orb is now free under MIT.
+
+<a href="components/dust-orb"><img src="previews/dust-orb.webp" width="480" alt="Dust Orb: a softly lit particle cloud on a dark background"></a>
+
+**[Try it live](https://aqualang89.github.io/shipnotes-components/components/dust-orb/demo.html)**. Bundled Three.js, automatic particle density and a Canvas fallback. [Code and setup](components/dust-orb/README.md).
+
 ## Iris
 
 A living light orb for a voice assistant: thin membranes and 960 light fibres around a dark pupil. It rests, turns toward you when it listens, sends light through its fibres when it thinks, and pulses with the real loudness of the voice when it speaks. Two palettes, its own air-and-glass sound, microphone input that never leaves the browser.
